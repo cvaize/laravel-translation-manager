@@ -6,7 +6,7 @@
  * Time: 11:17 PM
  */
 
-namespace Cvaize\TranslationManager\Classes;
+namespace Vsch\TranslationManager\Classes;
 
 class PathTemplateResolver
 {

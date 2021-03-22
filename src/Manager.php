@@ -4,6 +4,7 @@ namespace Vsch\TranslationManager;
 
 use Carbon\Carbon;
 use Exception;
+use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Events\Dispatcher;
@@ -1264,7 +1265,7 @@ class Manager
                 // just update the locale with translations, keys are already LTM keys here
                 $translations = $jsonTranslations[$locale];
             } else {
-                $translations = array_dot(include($langFile));
+                $translations = Arr::dot(include($langFile));
             }
             $this->importTranslationFile($locale, $db_group, $translations, $replace);
         }
